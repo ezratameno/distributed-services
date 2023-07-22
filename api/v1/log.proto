@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package log.v1;
+
+// we specify a package name for two reasons:
+// 1) this protobuf package name is used as the package name in the
+// generated Go code.
+// 2) it prevents name clashes between protocol
+//  message types that have the same name
+option go_package = "github.com/ezratameno/distributed-services/api/log_v1";
+
+message Record {
+  bytes  value  = 1;
+  uint64 offset = 2;
+}
